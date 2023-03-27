@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <p>Enter the latitude and longitude to get the current weather:</p>
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude">
+    <br><br>
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude">
+    <br><br>
+    <button onclick="getWeather()">Get Weather</button>
+    <br><br>
+    <div id="weather-data"></div>
+	<div id="animation"></div>
+    <script>
+   function getWeather() {
+  const latitude = document.getElementById("latitude").value;
+  const longitude = document.getElementById("longitude").value;
+  const apiKey = "f0fafed36866410b8354f63d45ec8dcd";
+  const url = `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${apiKey}&include=minutely`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const weatherData = document.getElementById("weather-data");
+      weatherData.innerHTML = `
+        <h2>Current Weather for ${data.data[0].city_name}, ${data.data[0].state_code}, ${data.data[0].country_code}</h2>
+        <p>Temperature: ${data.data[0].temp} &#8451;</p>
+        <p>Description: ${data.data[0].weather.description}</p>
+        <p>Humidity: ${data.data[0].rh}%</p>
+        <p>Pressure: ${data.data[0].pres} hPa</p>
+        <p>Wind Speed: ${data.data[0].wind_spd} m/s</p>
+      `;
+
+      const country = data.data[0].country_code;
+      const weatherDescription = data.data[0].weather.description.toLowerCase();
+      const animation = document.getElementById("animation");
+
+      if (weatherDescription.includes("clear")) {
+        // Add code here to display animation for clear weather condition
+      } else if (weatherDescription.includes("clouds")) {
+        // Add code here to display animation for cloudy weather condition
+      } else if (weatherDescription.includes("rain") || weatherDescription.includes("drizzle")) {
+        // Add code here to display animation for rainy weather condition
+      } else if (weatherDescription.includes("thunderstorm")) {
+        // Add code here to display animation for thunderstorm weather condition
+      } else if (weatherDescription.includes("snow")) {
+        // Add code here to display animation for snowy weather condition
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+    </script>
+	
+	<style>
+	/* Style for the body element */
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the h1 element */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+/* Style for the p element */
+p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* Style for the label element */
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Style for the input element */
+input {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for the button element */
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style for the div element with the ID "weather-data" */
+#weather-data {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Style for the div element with the ID "animation" */
+#animation {
+  margin-top: 2rem;
+}body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#weather-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#animation {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+footer {
+  background-color: #f9f9f9;
+  padding: 20px;
+ 
+  
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}
+	</style>
+	<br><br><br>
+	<footer>
+  <p>Hello From Arnob</p>
+</footer>
+
+  </body>
+</html>
