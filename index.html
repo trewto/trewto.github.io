@@ -43,8 +43,11 @@
 				<div class="card-body">
 				Hello, I'm
 					<h1>Arnob Protim Roy</h1>
-				<p>I am a  undergraduate Student of <a href="#" class="badge badge-light">Civil Engineering</a>
-					<!--<p>Undergratuate Student <br>-->at 
+			
+				
+				
+				<p>I am an  undergraduate Student of <a href="#" class="badge badge-light">Civil Engineering</a>
+					at 
 				<a href="https://www.buet.ac.bd/" class="badge badge-light">
 				Bangladesh  
 				
@@ -61,6 +64,7 @@
 				
 
 				Dhaka</a>
+				
 					  <br>
 					 I love to read books, and want to explore the diverse world through my eye.
 					 <br>
@@ -148,7 +152,7 @@
 				 I am from <i class="flag flag-bangladesh"></i>. So i can communicate in Bangla and English.<br>
 				 I can understand oral Hindi.
 				 I am trying to learn French and Hindi using Duolingo.
-				 Currently I have <i class="bi bi-1-square-fill"></i><i class="bi bi-9-square-fill"></i><i class="bi bi-0-square-fill"></i> 
+				 Currently I have <i class="bi bi-2-square-fill"></i><i class="bi bi-5-square-fill"></i><i class="bi bi-0-square-fill"></i> 
 				 days streak at Duolingo, and I want to make that <i class="bi bi-3-square-fill"></i><i class="bi bi-6-square-fill"></i><i class="bi bi-5-square-fill"></i>.
 				   </div>
 				</div>
@@ -160,13 +164,12 @@
 								</div>
 								  <div class="card-body "  style="  text-align: justify;"> 
 									<h5 class="card-title"></h5>
-										I haven't figure out my goals till now. But does it even matter at the end of the day? I will figure out someday. 
+										<!--I haven't figure out my goals till now. But does it even matter at the end of the day? I will figure out someday. 
 										I have decided to enjoy the present moments and living for today instead of worrying and unnecessary suffering.
-										I will do whatever I need to do for a better future. I am trying to improve my life style.
-										<br>
-										<br>
+										-->
+											<p id="text"></p>
 										
-										<small>
+										<!--<small>
 										<i class="bi bi-1-square-fill"></i>
 										<i class="bi bi-7-square-fill"></i> / 
 										<i class="bi bi-6-square-fill"></i>
@@ -178,7 +181,7 @@
 										Countries
 										<br>
 										And now I want to visit all of the districts of Bangladesh.
-								  </div>
+								  --></div>
 								</div>
 					
 					<!--
@@ -276,7 +279,7 @@
 				  <div class="card-body">
 					
 					<h6 class="">
-					 The page is updated on 25 January 2023
+					 The page is updated on 4 April 2023
 					</h6>
 				  </div>
 				</div>
@@ -288,8 +291,38 @@
 			</div>
   </div><!-- container end -->	
   
-  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8SV0F0XEBK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-8SV0F0XEBK');
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const lines = [
+				
+				"I haven't figure out my goals till now. But does it even matter at the end of the day? I will figure out someday. I have decided to enjoy the present moments and living for today instead of worrying and unnecessary suffering."
+			];
+			let index = 0;
+			let interval = setInterval(function() {
+				const line = lines[index];
+				$("#text").text("");
+				$.each(line.split(''), function(i, letter) {
+					setTimeout(function(){
+						$("#text").append(letter);
+					}, 50 * i);
+				});
+				index++;
+				if (index >= lines.length) {
+					clearInterval(interval);
+				}
+			}, 3000);
+		});
+	</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  <!--   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
