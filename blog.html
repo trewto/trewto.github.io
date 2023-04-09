@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recent Posts</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+	body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0;
+}
+
+.list-group-item {
+  border: none;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f7f7f7;
+}
+
+.list-group-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+.list-group-item span {
+  font-size: 12px;
+  color: #888;
+}
+
+.list-group-item p {
+  margin-bottom: 0;
+}
+
+.list-group-item p a {
+  font-weight: bold;
+}
+
+.list-group-item p a:hover {
+  text-decoration: none;
+}
+
+/* page nav styles */
+
+
+
+	</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center mb-0">Recent Posts</h2>
+        </div>
+        <div class="list-group list-group-flush" id="myList">
+        </div>
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+          </ul>
+        </nav>
+      </div>
+      <div id="output"></div>
+      <div id="pagination"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+	//const url = "https://cors-anywhere.herokuapp.com/https://trewto.wordpress.com";
+	const url = "https://trewto.wordpress.com";
+const perPage = 10;
+let currentPage = 1;
+let totalPages = 0;
+
+fetch(url)
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const htmlDocument = parser.parseFromString(data, "text/html");
+    const recentPosts = htmlDocument.querySelector("#recent-posts-3");
+    const listItems = recentPosts.querySelectorAll("li");
+    const paginationOutput = document.getElementById("pagination");
+
+    totalPages = Math.ceil(listItems.length / perPage);
+
+    showPage(listItems, currentPage);
+
+    let paginationHtml = "";
+    paginationHtml += `<span id="prev" class="prev btn btn-link pagination-btn page-item ${currentPage == 1 ? "disabled" : ""}"><a class="page-link" href="#" onclick="prevPage()">Previous</a></span>`;
+    for (let i = 1; i <= totalPages; i++) {
+ //  paginationHtml += `<span class="btn btn-sm p-0 m-0 page-item ${currentPage === i ? "active" : ""}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></span>`;
+   paginationHtml += `<span class="btn btn-sm p-0 m-0 page-item ${currentPage != i ? "d-none" : ""}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></span>`;
+    }
+    paginationHtml += `<span id="next" class="next btn btn-link pagination-btn page-item ${currentPage == totalPages ? "disabled" : ""}"><a class="page-link" href="#" onclick="nextPage()">Next</a></span>`;
+
+    paginationOutput.innerHTML = paginationHtml;
+
+    function showPage(list, page) {
+      const startIndex = (page - 1) * perPage;
+      const endIndex = startIndex + perPage;
+      const sublist = Array.from(list).slice(startIndex, endIndex);
+
+      let listHtml = "";
+      sublist.forEach(item => {
+        const anchor = item.querySelector("a");
+        const span = item.querySelector("span");
+        if (anchor && span) {
+          listHtml += `<a href="${anchor.href}" class="list-group-item list-group-item-action">
+                            <p><strong>${anchor.textContent}</strong></p>
+                            <span>${span.textContent}</span>
+                          </a>`;
+        }
+      });
+
+      const output = document.getElementById("output");
+      output.innerHTML = listHtml;
+    }
+
+    window.changePage = function(page) {
+      currentPage = page;
+      showPage(listItems, currentPage);
+
+      const paginationItems = paginationOutput.querySelectorAll(".page-item");
+      paginationItems.forEach(item => {
+      //  item.classList.remove("active");
+        item.classList.add("d-none");
+      });
+     // paginationItems[currentPage].classList.add("active");
+      paginationItems[currentPage].classList.remove("d-none");
+	  
+	    if (currentPage > 1) {
+		
+		
+		const prevPageBtn = document.querySelector(".prev");
+		prevPageBtn.classList.remove("disabled");
+	prevPageBtn.classList.remove("d-none");
+		} if (currentPage == 1) {
+		
+		
+		const prevPageBtn = document.querySelector(".prev");
+		prevPageBtn.classList.add("disabled");
+		prevPageBtn.classList.remove("d-none");
+	
+		}
+		if (currentPage == totalPages) {
+		
+		
+		const prevPageBtn = document.querySelector(".next");
+		prevPageBtn.classList.add("disabled");
+		prevPageBtn.classList.remove("d-none");
+	
+		}
+	  if (currentPage< totalPages) {
+		
+		
+		const prevPageBtn = document.querySelector(".next");
+		prevPageBtn.classList.remove("disabled");
+		prevPageBtn.classList.remove("d-none");
+	
+		}
+	  
+
+    };
+
+    window.nextPage = function() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        changePage(currentPage);
+		
+      }
+    };
+		
+		
+		
+	window.prevPage = function() {
+  if (currentPage > 1) {
+    currentPage--;
+    changePage(currentPage);
+    const prevPageBtn = document.querySelector(".prev");
+    prevPageBtn.classList.remove("disabled");
+    prevPageBtn.classList.remove("d-none");
+	
+  }
+};
+
+
+
+
+  })
+  .catch(error => console.error(error));
+
+</script>
+  </body>
+</html>
