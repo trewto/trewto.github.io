@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Blog</title>
+</head>
+<body>
+    <h1>Markdown Blog</h1>
+    <div id="posts"></div>
+
+    <script>
+        fetch('https://api.github.com/repos/trewto/trewto.github.io/contents/notes/files') 
+            .then(response => response.json())
+            .then(files => {
+                const postsContainer = document.getElementById('posts');
+                files.forEach(file => {
+                    if (file.name.endsWith('.md')) {
+                        fetch(file.download_url)
+                            .then(response => response.text())
+                            .then(content => {
+                                const title = content.split('\n')[0].replace('#', '').trim();
+                                const post = document.createElement('div');
+                                post.innerHTML = `
+                                    <h2>${title}</h2>
+                                    <p>${content}</p>
+                                `;
+                                postsContainer.appendChild(post);
+                            });
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching files:', error));
+    </script>
+</body>
+</html>
