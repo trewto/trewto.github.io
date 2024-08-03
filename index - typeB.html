@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnob Protim Roy - Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .navbar {
+            background-color: #212529;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #ddd !important;
+        }
+        .jumbotron {
+            background-color: #fff;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .jumbotron h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .jumbotron p {
+            font-size: 1.25rem;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+        }
+        .card-header {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .card-body h5 {
+            color: #28a745;
+        }
+        .badge {
+            font-size: 1rem;
+        }
+        footer {
+            background-color: #212529;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .list-unstyled li {
+            margin-bottom: 0.5rem;
+        }
+        .social-icons a {
+            color: #212529;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        .social-icons a:hover {
+            color: #28a745;
+        }
+        .contact-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .contact-button:hover {
+            background-color: #218838;
+        }
+        .current-activities {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Arnob Protim Roy</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#work-exploring">Activities</a>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Hello, I'm Arnob Protim Roy</h1>
+        <p>I graduated from the <span class="badge badge-light">Department of Civil Engineering</span> at <a href="https://www.buet.ac.bd/" class="badge badge-light">Bangladesh University of Engineering & Technology</a>, Dhaka</p>
+        <p>I am currently focusing on Machine Learning.<br> Sometimes I blog at <a href="https://trewto.wordpress.com/" class="badge badge-light">trewto.wordpress.com</a></p>
+    </div>
+    <div id="work-exploring" class="mb-5">
+      <div class="card">
+          <div class="card-header">
+              Work & Exploring
+          </div>
+          <div class="card-body">
+              <!-- Current Projects Section -->
+              <h5 class="font-weight-bold mb-3">Current Projects</h5>
+              <div class="mb-4 text-justify">
+                  <p><strong>Deep Learning:</strong> Currently practicing with YOLOv8 for object detection and working on integrating models to scan hand signs using a webcam.</p>
+                  <p><strong>Rainfall Prediction:</strong> Engaged in a project to predict rainfall runoff using machine learning techniques. Exploring various models and methods to improve prediction accuracy.</p>
+                  <p><strong>Published Research:</strong> Authored a paper on SWAT analysis of circular waterways around Dhaka City, presented at a KUET conference.</p>
+              </div>
+              
+              <!-- Recent GitHub Projects Section -->
+              <h5 class="font-weight-bold mb-3">Recent GitHub Projects</h5>
+              <ul class="list-unstyled text-justify">
+                  <li>
+                      <a href="https://github.com/trewto/Yolo-Practices" target="_blank" rel="noopener noreferrer">
+                          <strong>Yolo-Practices</strong>
+                      </a> - Python, Updated Aug 3, 2024
+                      <p>This repository contains Python projects focused on practicing YOLO (You Only Look Once) object detection techniques. It features implementations and experiments with different YOLO versions for various object detection tasks.</p>
+                  </li>
+                  <li>
+                      <a href="https://github.com/trewto/Machine-Learning-Models" target="_blank" rel="noopener noreferrer">
+                          <strong>Machine-Learning-Models</strong>
+                      </a> - Jupyter Notebook, Updated Jul 13, 2024
+                      <p>This repository includes Jupyter Notebooks demonstrating various machine learning models and techniques. It covers hands-on implementations and experiments with different algorithms for predicting and analyzing data, particularly using Australian weather datasets.</p>
+                  </li>
+                  <li>
+                      <a href="https://github.com/trewto/Path-Detect-From-Map" target="_blank" rel="noopener noreferrer">
+                          <strong>Path-Detect-From-Map</strong>
+                      </a> - Python, PyGame, Updated Jun 23, 2024
+                      <p>This Python project focuses on detecting and analyzing roads from map images. It utilizes tools like Google Maps and Snazzy Maps to process and detect road patterns and features from map data.</p>
+                  </li>
+                  <li>
+                      <a href="https://github.com/trewto/Quiz-Management" target="_blank" rel="noopener noreferrer">
+                          <strong>Quiz-Management</strong>
+                      </a> - PHP, MySQL, CSS, Bootstrap, Updated May 20, 2024
+                      <p>A PHP project that provides a system for managing quizzes. It includes features for creating, managing, and analyzing quizzes and questions, aimed at educational and testing purposes.</p>
+                  </li>
+                  <li>
+                      <a href="https://github.com/trewto/web-scraper" target="_blank" rel="noopener noreferrer">
+                          <strong>Web-Scraper</strong>
+                      </a> - Python, Updated May 4, 2024
+                      <p>A Python-based web scraping tool that extracts data from websites. It includes code for scraping various types of web content, suitable for data collection and analysis tasks.</p>
+                  </li>
+                  <li>
+                      <a href="https://github.com/trewto/Chrome-Dino-Game-Player" target="_blank" rel="noopener noreferrer">
+                          <strong>Chrome-Dino-Game-Player</strong>
+                      </a> - Python, Updated Jan 2, 2024
+                      <p>This project automates playing the Chrome Dino game using computer vision techniques. It involves making the game recognize obstacles and control the character to achieve high scores.</p>
+                  </li>
+                  <li>
+                      <a href="https://github.com/trewto/bornocms" target="_blank" rel="noopener noreferrer">
+                          <strong>Borno CMS</strong>
+                      </a> - PHP, MySQL, CSS, JS, Bootstrap, Updated May 18, 2019
+                      <p>An open-source content management system (CMS) developed in PHP. It provides a framework for creating and managing websites with features for content creation and administration.</p>
+                  </li>
+              </ul>
+              
+              <!-- Learning & Personal Growth Section -->
+              <h5 class="font-weight-bold mb-3">Learning & Personal Growth</h5>
+              <p class="text-justify"><strong>Language Learning:</strong> Maintaining a 700+ day streak in French on Duolingo.</p>
+          </div>
+      </div>
+  </div>
+  
+  
+    <div id="education" class="mb-5">
+        <div class="card">
+            <div class="card-header">
+                Education
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-2 d-none d-md-block">
+                        <img src="https://www.buet.ac.bd/web/assets/img/BImages/logoBIRN.png" alt="BUET Logo" style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="col-sm-12 col-md-10">
+                        <h5 class="font-weight-bold">Bangladesh University of Engineering & Technology (BUET)</h5>
+                        <h6 class="text-muted">B.Sc. in Civil Engineering</h6>
+                        <p>Location: Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience" class="mb-5">
+        <div class="card">
+            <div class="card-header">
+                Experience
+            </div>
+            <div class="card-body">
+                <h5 class="font-weight-bold">Bangladesh Climate Science Olympiad 2021</h5>
+                <h6 class="text-muted">Coordinate Team Member, 2021</h6>
+                <hr>
+                <h5 class="font-weight-bold">Bangladesh Astronomical Society</h5>
+                <h6 class="text-muted">Volunteer, June 2019-N/A</h6>
+                <hr>
+                <h5 class="font-weight-bold">International Astronomical Union</h5>
+                <h6 class="text-muted">National Volunteer, June 2019-June 2020</h6>
+                <p>The International Astronomical Union is an international association of professional astronomers, at the PhD level and beyond, active in professional research and education in astronomy.</p>
+                <hr>
+                <h5 class="font-weight-bold">Name ExoWorld: Project Bangladesh</h5>
+                <h6 class="text-muted">Coordinator, Bangladesh National Committee</h6>
+                <p>An IAU100 Global Event. NameExoWorlds offers the opportunity for all countries in the world to give a name to one exoplanet and its hosting star. IAU assign Bangladesh to select a common name for the star HD 148427 and its planet. The name will be taken from the students of school/colleges among Bangladesh.</p>
+                <hr>
+                <h5 class="font-weight-bold">12th Abdul Jabbar Astronomy Workshop</h5>
+                <h6 class="text-muted">Coordinator</h6>
+                <p>A three-day-long astronomy workshop held in BUET, DHAKA with the collaboration of International Astronomical Union & National Astronomical Research Institute of Thailand</p>
+                <hr>
+                <h5 class="font-weight-bold">National High School Programming Contest</h5>
+                <h6 class="text-muted">National winner & Camper, 2017</h6>
+                <hr>
+                <h5 class="font-weight-bold">BORNO CMS</h5>
+                <a href="https://github.com/trewto/bornocms" class="badge badge-dark">Link</a>
+                <h6 class="text-muted">Programmer, 2012-2016</h6>
+                <p>Open-source content management system, powered by PHP, MySQL, JavaScript, CSS</p>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <div id="contact">
+        <div class="card">
+            <div class="card-header">
+                Contact
+            </div>
+            <div class="card-body">
+                <h5>Connect with me:</h5>
+                <ul class="list-unstyled social-icons">
+                    <li>
+                        <a href="https://github.com/trewto" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/trewto" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:pr.arnob@gmail.com">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://trewto.wordpress.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-blog"></i> Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.goodreads.com/trewto" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-goodreads"></i> Goodreads
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Last updated on 3 Aug 2024</p>
+    </footer>
+</div>
+
+<button class="contact-button" onclick="window.location.href='#contact'">
+    <i class="fas fa-envelope"></i>
+</button>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
