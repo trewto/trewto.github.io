@@ -116,37 +116,57 @@
     </div>
 </nav>
 
+<script>
+    var minLoadingTime = 2000; // Minimum time (2 seconds) for spinner visibility
+    var loadTime = new Date().getTime(); // Record the time when the page starts loading
+
+    document.onreadystatechange = function () {
+        var jumbotron = document.getElementById('jumbotron2');
+        if (document.readyState === 'loading') {
+            jumbotron.style.display = 'block'; // Show the jumbotron while the page is loading
+        } else if (document.readyState === 'complete') {
+            var timeSpentLoading = new Date().getTime() - loadTime;
+            var remainingTime = minLoadingTime - timeSpentLoading;
+
+            // Ensure the spinner is visible for at least 2 seconds
+            setTimeout(function() {
+                jumbotron.style.display = 'none'; // Hide the jumbotron after 2 seconds or when loading is complete
+            }, remainingTime > 0 ? remainingTime : 0);
+        }
+    };
+</script>
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron pb-3">
         <h1>Hello, I'm Arnob Protim Roy</h1>
        <!-- <p>I graduated from the <span class="badge badge-light">Department of Civil Engineering</span> at <a href="https://www.buet.ac.bd/" class="badge badge-light">Bangladesh University of Engineering & Technology</a>, Dhaka</p>
     --><p>I graduated from the <span class="badge badge-light">Department of Civil Engineering</span> at Bangladesh University of Engineering & Technology, Dhaka<a href="https://www.buet.ac.bd/" class="badge badge-light">(BUET)</a></p>
         <p>I am currently focusing on Machine Learning.<br> Sometimes I write at <a href="https://trewto.wordpress.com/" class="badge badge-light">trewto.wordpress.com</a></p>
-        <div class="spinner-grow text-primary" role="status">
-            <span class="visually-hidden">...</span>
-          </div>
-          <div class="spinner-grow text-secondary" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-          <div class="spinner-grow text-success" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-          <div class="spinner-grow text-danger" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-          <div class="spinner-grow text-warning" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-          <div class="spinner-grow text-info" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-          <div class="spinner-grow text-light" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-          <div class="spinner-grow text-dark" role="status">
-            <span class="visually-hidden"></span>
-          </div>
-         
+            <div id="jumbotron2">
+            <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden">...</span>
+            </div>
+            <div class="spinner-grow text-secondary" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow text-light" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
     </div>
 
     
