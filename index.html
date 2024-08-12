@@ -137,10 +137,61 @@
 </script>
 <div class="container">
     <div class="jumbotron pb-3">
-        <h1>Hello, I'm Arnob Protim Roy</h1>
+        <h1>Hello<text id="text4"></text></h1>
+        <!--<h1>Hello,<text id="text4"> I'm Arnob Protim Roy</text></h1>-->
        <!-- <p>I graduated from the <span class="badge badge-light">Department of Civil Engineering</span> at <a href="https://www.buet.ac.bd/" class="badge badge-light">Bangladesh University of Engineering & Technology</a>, Dhaka</p>
     --><p>I graduated from the <span class="badge badge-light">Department of Civil Engineering</span> at Bangladesh University of Engineering & Technology, Dhaka<a href="https://www.buet.ac.bd/" class="badge badge-light">(BUET)</a></p>
-        <p>I am currently focusing on Machine Learning.<br> Sometimes I write at <a href="https://trewto.wordpress.com/" class="badge badge-light">trewto.wordpress.com</a></p>
+        <p>
+            
+            
+           <!-- I am currently focusing on Machine Learning. <br>
+            -->
+           <p id="text3"></p>
+          
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    const lines = [
+                        
+                        "I am currently focusing on Machine Learning..."
+                    ];
+                    let index = 0;
+                    let interval = setInterval(function() {
+                        const line = lines[index];
+                        $("#text3").text("");
+                        $.each(line.split(''), function(i, letter) {
+                            setTimeout(function(){
+                                $("#text3").append(letter);
+                            }, 50 * i);
+                        });
+                        index++;
+                        if (index >= lines.length) {
+                            clearInterval(interval);
+                        }
+                    }, 4500);
+                });
+                $(document).ready(function() {
+                    const lines = [
+                        
+                        ", I'm Arnob Protim Roy"
+                    ];
+                    let index = 0;
+                    let interval = setInterval(function() {
+                        const line = lines[index];
+                        $("#text4").text("");
+                        $.each(line.split(''), function(i, letter) {
+                            setTimeout(function(){
+                                $("#text4").append(letter);
+                            }, 100 * i);
+                        });
+                        index++;
+                        if (index >= lines.length) {
+                            clearInterval(interval);
+                        }
+                    }, 2000);
+                });
+            </script>
+            Sometimes I write at <a href="https://trewto.wordpress.com/" class="badge badge-light">trewto.wordpress.com</a></p>
             <div id="jumbotron2">
             <div class="spinner-grow text-primary" role="status">
                 <span class="visually-hidden">...</span>
@@ -179,7 +230,7 @@
               <!-- Current Projects Section -->
               <h5 class="font-weight-bold mb-3">Current Projects</h5>
               <div class="mb-4 text-justify">
-                  <p><strong>Deep Learning:</strong> Currently practicing with YOLOv8 for object detection and working on integrating models to scan hand signs using a webcam.</p>
+                  <p><strong>Deep Learning:</strong> Currently practicing with YOLOv8 for object detection and Train Custom Dataset </p>
                   <p><strong>Rainfall Prediction:</strong> Engaged in a project to predict rainfall runoff using machine learning techniques. Exploring various models and methods to improve prediction accuracy.</p>
                 
               </div>
@@ -436,7 +487,7 @@ Machine Learning, Computer Vision, Numerical Analysis, Transportation Engineerin
               Connect with me
             </div>
             <div class="card-body">
-                        <p>
+                       
               <ul class="list-unstyled social-icons">
                   <li>
                       <a href="https://github.com/trewto" target="_blank" rel="noopener noreferrer">
@@ -468,7 +519,8 @@ Machine Learning, Computer Vision, Numerical Analysis, Transportation Engineerin
                           <i class="fab fa-linkedin"></i> LinkedIn
                       </a>
                   </li>
-              </ul></p>
+              </ul>
+           
           </div>
           
           <style>
