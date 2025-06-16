@@ -14,21 +14,26 @@
     
       let userIp = 'Unknown'; // Default value
       // Attempt to fetch user IP address
-      try {
-        // Get user IP address
-        const ipResponse = await fetch('https://api.ipify.org?format=json');
-        if (!ipResponse.ok) throw new Error('IP fetch failed');
-        const ipData = await ipResponse.json();
-        userIp = ipData.ip;
-      } catch (error) {
-        console.error("IP detection error:", error);
-      }
+      
 
-
-      const webAppUrl = "https://script.google.com/macros/s/AKfycbxnxtLlDLPzuBcIgpr8NJorktjra8D1r9g0leGFx5TvvpMfp5oZlTEIxy2OZq4hkDF-DA/exec";
+      const webAppUrl = "https://script.google.com/macros/s/AKfycbyZJDc5KRLCNLxu5G_g18KQM0ahaIlBVWxupV10bfrx6x2LuSR615TTosxGWeiWh9_7gw/exec";
         const storedAccess = localStorage.getItem("emailAccess");
       const storedSubject = localStorage.getItem("subject");
       const storedEmail = localStorage.getItem("email");
+
+
+
+
+      // Replace your IP detection code with:
+      try {
+        const ipResponse = await fetch(`${webAppUrl}?proxy=ipify`);
+        if (ipResponse.ok) {
+          const ipData = await ipResponse.json();
+          userIp = ipData.ip;
+        }
+      } catch (error) {
+        console.error("IP detection error:", error);
+      }
 
       function showContent(subject) {
         emailForm.style.display = "none";
