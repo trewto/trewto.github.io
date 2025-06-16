@@ -133,7 +133,10 @@
   <!-- Protected Content for CE 6505 -->
   <div id="contentA" style="display:none;">
     <h3 class="mb-4">🎬 CE 6505 Playlist</h3>
+
+
     <iframe
+        id="videoFrameA"
       width="640"
       height="390"
       src="https://www.youtube.com/embed/videoseries?list=PLUtt8KiEkpHLckhaX04u18DWtD_LUkTVY&modestbranding=1&rel=0&controls=1"
@@ -141,19 +144,80 @@
       sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
       allowfullscreen></iframe>
     <br><br>
-    <button id="logoutBtn" class="btn btn-outline-danger mt-3">Logout / Clear Access</button>
+
+
+      <!-- Buttons -->
+  <div class="mb-3">
+    <button class="btn btn-primary m-1 video-btn" data-src="https://www.youtube.com/embed/videoseries?list=PLUtt8KiEkpHLckhaX04u18DWtD_LUkTVY">Full Playlist</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/1orL1uGTVyg?si=4GAxDw5hcq7FyqMa">Lecture 1</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/uF3gsrI29M8?si=4GAxDw5hcq7FyqMa">Lecture 2</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/WRckqMU0op8?si=4GAxDw5hcq7FyqMa">Lecture 3</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/dES_TNj_Xk4?si=4GAxDw5hcq7FyqMa">Lecture 4</button><br>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/HsK3wrpdpTM?si=4GAxDw5hcq7FyqMa">Lecture 6</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/FKMEKvXtcuk?si=4GAxDw5hcq7FyqMa">Lecture 7_1</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/jBHcVvCALzM?si=4GAxDw5hcq7FyqMa">Lecture 7_2</button>
+    <button class="btn btn-secondary m-1 video-btn" data-src="https://www.youtube.com/embed/zkx30AHAmH8?si=4GAxDw5hcq7FyqMa">Lecture 8</button>
+    
+    <!-- Add more buttons with appropriate `data-src` as needed -->
+  </div>
+
+  <br>
+  <br>
+
+      <button id="logoutBtn" class="btn btn-outline-danger mt-3">Logout / Clear Access</button>
+
+<script>
+
+  document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("video-btn")) {
+    const newSrc = event.target.getAttribute("data-src");
+    const iframe = document.getElementById("videoFrameA");
+    iframe.src = newSrc;
+  }
+});
+</script>
   </div>
 
   <!-- Protected Content for CE 6513 -->
   <div id="contentB" style="display:none;">
     <h3 class="mb-4">🎬 CE 6513 Playlist</h3>
     <iframe
+     id="videoFrameB"
       width="640"
       height="390"
       src="https://www.youtube.com/embed/videoseries?list=PLUtt8KiEkpHICdq5Zq-i6GgUHV7Y_X7vD"
       frameborder="0"
       sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
       allowfullscreen></iframe>
+
+
+
+        <div class="mb-3">
+    <button class="btn btn-primary m-1 video-btnB" data-src="https://www.youtube.com/embed/videoseries?list=PLUtt8KiEkpHICdq5Zq-i6GgUHV7Y_X7vD">Full Playlist</button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/GUO1vL2akbw"> slide 2 part 1 </button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/KEd6GsDDpvo"> slide 2 part 2 and Slide 3 Part 1 </button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/UebVQESX-RA">  slide 3 part 2  </button><br>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/xFRzRBE2FUE"> slide 3 part 3 </button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/atudWNk4OQg"> slide 4 part 1 </button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/FWkeYLUE59s"> slide 4 part 2 </button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/4Z8Ob9_oJAU"> slide 5 part 1 </button><br>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/wfMF969OIJA"> slide 5 part 2 </button>
+    <button class="btn btn-secondary m-1 video-btnB" data-src="https://www.youtube.com/embed/UZ5Cw5Ff48Y">  slide 6  </button>
+
+
+    <!-- Add more buttons with appropriate `data-src` as needed -->
+  </div>
+<script>
+
+  document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("video-btnB")) {
+    const newSrc = event.target.getAttribute("data-src");
+    const iframe = document.getElementById("videoFrameB");
+    iframe.src = newSrc;
+  }
+});
+</script>
+
     <br><br>
     <button id="logoutBtn" class="btn btn-outline-danger mt-3">Logout / Clear Access</button>
   </div>
@@ -162,5 +226,5 @@
 
 
 &copy;
- This page is secured and only accessible to authorized users. If you have any issues, please contact the administrator.
+ This page is only accessible to authorized users.
 </html>
