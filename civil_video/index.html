@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Email-Restricted Playlist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const emailForm = document.getElementById("emailForm");
+      const contentA = document.getElementById("contentA");
+      const contentB = document.getElementById("contentB");
+      const logoutBtn = document.getElementById("logoutBtn");
+
+      const webAppUrl = "https://script.google.com/macros/s/AKfycbyNsyfcukmdQccyxdvv9hn_xUs__Q3Gp8s_y-btP9t6UeEK7LdFm8r5jJFgparZzJqIuA/exec";
+        const storedAccess = localStorage.getItem("emailAccess");
+      const storedSubject = localStorage.getItem("subject");
+      const storedEmail = localStorage.getItem("email");
+
+      function showContent(subject) {
+        emailForm.style.display = "none";
+        contentA.style.display = "none";
+        contentB.style.display = "none";
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.has('id') || urlParams.get('id') !== btoa(storedEmail)) {
+            // Only add id parameter if it doesn't exist
+            const storedEmailen = btoa(storedEmail);
+            window.location.href = window.location.pathname + `?id=${storedEmailen}`;
+        }
+        //alert(storedEmail)
+
+        if (subject === "CE_6505") {
+          contentA.style.display = "block";
+        } else if (subject === "CE_6513") {
+          contentB.style.display = "block";
+        }
+      }
+
+      function showLogin() {
+        emailForm.style.display = "block";
+        contentA.style.display = "none";
+        contentB.style.display = "none";
+      }
+
+      
+
+      if (storedAccess === "granted" && storedSubject) {
+        
+        showContent(storedSubject);
+      } else {
+        showLogin();
+      }
+
+      document.getElementById("submitEmailBtn").addEventListener("click", () => {
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value;
+
+        if (!email.includes("@")) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+
+        fetch(webAppUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `email=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}`
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.allowed) {
+           
+            localStorage.setItem("emailAccess", "granted");
+            localStorage.setItem("email", encodeURIComponent(email));
+            localStorage.setItem("subject", subject);
+            
+            showContent(subject);
+            
+          } else {
+            alert("❌ This email is not authorized for the selected subject.");
+          }
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("Something went wrong. Try again later.");
+        });
+      });
+
+             document.querySelectorAll("#logoutBtn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                localStorage.removeItem("emailAccess");
+                localStorage.removeItem("email");
+                localStorage.removeItem("subject");
+                showLogin();
+            });
+            });
+    });
+  </script>
+</head>
+<body class="bg-light text-center p-5">
+
+  <!-- Email Entry Form -->
+  <div id="emailForm" style="display:none;">
+    <h3 class="mb-3">📧 Enter your approved email/id</h3>
+    <input type="email" id="email" class="form-control w-25 mx-auto mb-3" placeholder="Enter your email">
+    <select id="subject" class="form-select w-25 mx-auto mb-3">
+      <option value="CE_6505">CE 6505</option>
+      <option value="CE_6513">CE 6513</option>
+    </select>
+    <button id="submitEmailBtn" class="btn btn-primary">Submit</button>
+  </div>
+
+  <!-- Protected Content for CE 6505 -->
+  <div id="contentA" style="display:none;">
+    <h3 class="mb-4">🎬 CE 6505 Playlist</h3>
+    <iframe
+      width="640"
+      height="390"
+      src="https://www.youtube.com/embed/videoseries?list=PLUtt8KiEkpHLckhaX04u18DWtD_LUkTVY&modestbranding=1&rel=0&controls=1"
+      frameborder="0"
+      sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+      allowfullscreen></iframe>
+    <br><br>
+    <button id="logoutBtn" class="btn btn-outline-danger mt-3">Logout / Clear Access</button>
+  </div>
+
+  <!-- Protected Content for CE 6513 -->
+  <div id="contentB" style="display:none;">
+    <h3 class="mb-4">🎬 CE 6513 Playlist</h3>
+    <iframe
+      width="640"
+      height="390"
+      src="https://www.youtube.com/embed/videoseries?list=PLUtt8KiEkpHICdq5Zq-i6GgUHV7Y_X7vD"
+      frameborder="0"
+      sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+      allowfullscreen></iframe>
+    <br><br>
+    <button id="logoutBtn" class="btn btn-outline-danger mt-3">Logout / Clear Access</button>
+  </div>
+
+</body>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7MC27H5VQ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7MC27H5VQ3');
+</script>
+
+
+</html>
