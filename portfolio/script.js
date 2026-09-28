@@ -185,6 +185,7 @@ if (navigator.clipboard?.writeText) {
 }
 
 const localVideos = {
+  'thesis-trajectory': {title: 'Thesis trajectory outcome preview', caption: 'M.Sc. thesis · Pedestrian trajectory predictions and surrounding vehicle context · 22-second preview.'},
   'homography-calibration': {title: 'Homography Calibrator', caption: 'Camera-to-ground calibration demonstration · 25 seconds · Local XY / GPS references, road-plane grids, and coordinate inspection.'},
   'annotation-workbench': {title: 'AI Annotation Workbench', caption: 'Human-in-the-loop annotation demonstration · 30 seconds · The effort-reduction graphic in the video is conceptual, not a measured benchmark.'}
 };
