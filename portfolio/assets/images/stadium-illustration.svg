@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Stadium — conceptual illustration</title>
+  <desc>An original overhead schematic of a stadium, running track and playing field. Not a depiction of the inspected Bangladesh Military Stadium.</desc>
+  <rect width="800" height="600" fill="#fff4e8"/>
+  <rect x="46" y="48" width="708" height="504" rx="32" fill="#f3d9bc"/>
+  <rect x="90" y="94" width="620" height="412" rx="206" fill="#d76e50" stroke="#a64d39" stroke-width="4"/>
+  <g fill="none" stroke="#fff4e8" stroke-width="4">
+    <rect x="106" y="110" width="588" height="380" rx="190"/>
+    <rect x="122" y="126" width="556" height="348" rx="174"/>
+    <rect x="138" y="142" width="524" height="316" rx="158"/>
+  </g>
+  <rect x="155" y="160" width="490" height="280" rx="140" fill="#e7a15b"/>
+  <g fill="none" stroke="#fff7eb" stroke-width="3">
+    <rect x="164" y="169" width="472" height="262" rx="131"/>
+    <rect x="173" y="178" width="454" height="244" rx="122"/>
+    <rect x="182" y="187" width="436" height="226" rx="113"/>
+  </g>
+  <rect x="225" y="201" width="350" height="198" rx="4" fill="#318a61"/>
+  <path d="M295 203h70v194h-70zm140 0h70v194h-70z" fill="#48a577"/>
+  <g fill="none" stroke="#f9faf6" stroke-width="3">
+    <path d="M237 213h326v174H237zM400 213v174M237 248h55v104h-55M563 248h-55v104h55M237 273h22v54h-22M563 273h-22v54h22"/>
+    <circle cx="400" cy="300" r="38"/>
+    <circle cx="400" cy="300" r="3" fill="#f9faf6"/>
+  </g>
+  <g fill="#334553">
+    <rect x="104" y="60" width="74" height="13" rx="4"/><rect x="622" y="60" width="74" height="13" rx="4"/>
+    <rect x="104" y="527" width="74" height="13" rx="4"/><rect x="622" y="527" width="74" height="13" rx="4"/>
+  </g>
+  <g stroke="#a64d39" stroke-width="5"><path d="M141 74v38M659 74v38M141 488v38M659 488v38"/></g>
+  <g fill="#80ac63"><circle cx="57" cy="228" r="17"/><circle cx="57" cy="300" r="17"/><circle cx="57" cy="372" r="17"/><circle cx="743" cy="228" r="17"/><circle cx="743" cy="300" r="17"/><circle cx="743" cy="372" r="17"/></g>
+</svg>

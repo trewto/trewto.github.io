@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <title>Borno CMS — conceptual illustration</title>
+  <desc>A stylized page editor connected to website pages. This is an illustration, not an application screenshot.</desc>
+  <rect width="600" height="450" fill="#eef3ed"/>
+  <g fill="none" stroke="#95ae9e" stroke-width="5">
+    <path d="M310 175h120v145H310"/>
+    <path d="M430 245h48"/>
+  </g>
+  <rect x="70" y="70" width="310" height="270" rx="12" fill="white" stroke="#b3c7b8" stroke-width="4"/>
+  <path d="M82 70h286a12 12 0 0 1 12 12v43H70V82a12 12 0 0 1 12-12" fill="#164b40"/>
+  <g fill="#c6ddce"><circle cx="94" cy="98" r="6"/><circle cx="117" cy="98" r="6"/><circle cx="140" cy="98" r="6"/></g>
+  <rect x="94" y="151" width="62" height="163" rx="4" fill="#e3ece1"/>
+  <g stroke="#9bb6a4" stroke-width="6" stroke-linecap="round"><path d="M109 175h30m-30 28h30m-30 28h20"/></g>
+  <rect x="183" y="154" width="166" height="66" rx="5" fill="#d2e4d5"/>
+  <g stroke="#87a892" stroke-width="8" stroke-linecap="round"><path d="M187 247h147m-147 27h147m-147 27h93"/></g>
+  <rect x="464" y="190" width="80" height="105" rx="7" fill="white" stroke="#95ae9e" stroke-width="4"/>
+  <g stroke="#176458" stroke-width="6" stroke-linecap="round"><path d="M482 218h43m-43 21h43m-43 21h27"/></g>
+  <text x="300" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#56615b">CMS · illustration</text>
+</svg>

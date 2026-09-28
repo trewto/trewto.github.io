@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <title>Embedding retrieval — concept illustration</title>
+  <desc>A generic vector and similarity-search diagram with no personal images or profile data. Not an application screenshot.</desc>
+  <rect width="600" height="450" fill="#eef3ed"/>
+  <g stroke="#91ad9d" stroke-width="4" fill="#ffffff">
+    <rect x="48" y="144" width="130" height="130" rx="12"/>
+    <rect x="246" y="119" width="108" height="180" rx="12"/>
+    <rect x="420" y="129" width="132" height="52" rx="8"/>
+    <rect x="420" y="192" width="132" height="52" rx="8"/>
+    <rect x="420" y="255" width="132" height="52" rx="8"/>
+  </g>
+  <g fill="#176458">
+    <rect x="77" y="175" width="24" height="65" rx="4"/>
+    <rect x="113" y="198" width="24" height="42" rx="4"/>
+    <rect x="270" y="148" width="14" height="122" rx="4"/>
+    <rect x="293" y="173" width="14" height="97" rx="4"/>
+    <rect x="316" y="194" width="14" height="76" rx="4"/>
+  </g>
+  <g stroke="#176458" stroke-width="5" fill="none"><path d="M190 209H232m-13-12 13 12-13 12M366 209H406m-13-12 13 12-13 12"/></g>
+  <g fill="#b6d3c5"><rect x="437" y="147" width="94" height="15" rx="4"/><rect x="437" y="210" width="70" height="15" rx="4"/><rect x="437" y="273" width="43" height="15" rx="4"/></g>
+  <text x="300" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#164b40">Embedding retrieval · illustration</text>
+</svg>

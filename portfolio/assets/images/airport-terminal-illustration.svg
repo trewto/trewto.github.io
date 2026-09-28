@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Airport terminal — conceptual illustration</title>
+  <desc>An original schematic of an airport terminal, control tower and aircraft. Not a depiction of Dhaka Airport Terminal 3 or its construction design.</desc>
+  <rect width="800" height="600" fill="#edf2ff"/>
+  <path d="M0 374h800v226H0z" fill="#dbdff1"/>
+  <path d="M0 497h800v72H0z" fill="#637089"/>
+  <path d="M0 533h800" stroke="#f9faf6" stroke-width="4" stroke-dasharray="28 22"/>
+  <rect x="94" y="205" width="492" height="167" rx="8" fill="#fff" stroke="#6d68a6" stroke-width="4"/>
+  <path d="M74 209q266-112 532 0v17H74z" fill="#ada6da" stroke="#6d68a6" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="115" y="246" width="450" height="105" fill="#82c6e8"/>
+  <g stroke="#edf2ff" stroke-width="5"><path d="M165 246v105M215 246v105M265 246v105M315 246v105M365 246v105M415 246v105M465 246v105M515 246v105M115 300h450"/></g>
+  <g fill="#4d497f"><rect x="178" y="333" width="58" height="39" rx="2"/><rect x="326" y="333" width="58" height="39" rx="2"/><rect x="474" y="333" width="58" height="39" rx="2"/></g>
+  <path d="M646 364V181h38v183" fill="#fff" stroke="#6d68a6" stroke-width="4"/>
+  <path d="m623 142 12 54h61l12-54z" fill="#82c6e8" stroke="#6d68a6" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M618 142h95M665 141V97" stroke="#4d497f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M650 152v32M680 152v32" stroke="#edf2ff" stroke-width="4"/>
+  <path d="M79 392h634" stroke="#ada6da" stroke-width="5"/>
+  <path d="M545 465q-8-8-8-24v-23l-65 28v-13l65-49v-31q0-17 8-24 8 7 8 24v31l65 49v13l-65-28v23q0 16-8 24z" fill="#f9faf6" stroke="#655fa1" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#69a796"><circle cx="90" cy="430" r="16"/><circle cx="143" cy="430" r="16"/><circle cx="196" cy="430" r="16"/></g>
+  <g fill="#efa459"><rect x="292" y="418" width="50" height="24" rx="5"/><rect x="365" y="418" width="50" height="24" rx="5"/></g>
+</svg>

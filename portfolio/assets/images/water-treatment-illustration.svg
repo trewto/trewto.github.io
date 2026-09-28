@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <title>Water treatment — conceptual illustration</title>
+  <desc>A schematic arrangement of water tanks, pipes and a plant building. Not a depiction of the Sayedabad site.</desc>
+  <rect width="800" height="600" fill="#eaf7ff"/>
+  <path d="M0 490H800V600H0Z" fill="#c6e5f5"/>
+  <path d="M80 310H720M225 310V430H600V310" fill="none" stroke="#3e93b9" stroke-width="18" stroke-linejoin="round"/>
+  <rect x="100" y="140" width="245" height="205" rx="12" fill="#fff" stroke="#286a9b" stroke-width="4"/>
+  <path d="M112 245H333V325Q333 333 325 333H120Q112 333 112 325Z" fill="#48b8da"/>
+  <path d="M128 265Q160 244 192 265T256 265T320 265M128 292Q160 271 192 292T256 292T320 292" fill="none" stroke="#fff" stroke-width="5"/>
+  <g fill="#215583"><rect x="128" y="168" width="72" height="12" rx="4"/><rect x="128" y="194" width="145" height="8" rx="4" opacity=".35"/></g>
+  <rect x="425" y="175" width="255" height="170" rx="12" fill="#fff" stroke="#286a9b" stroke-width="4"/>
+  <g fill="#7cd3dc" stroke="#286a9b" stroke-width="3"><rect x="450" y="205" width="52" height="115" rx="6"/><rect x="526" y="205" width="52" height="115" rx="6"/><rect x="602" y="205" width="52" height="115" rx="6"/></g>
+  <g stroke="#fff" stroke-width="4"><path d="M460 239H492M460 269H492M460 299H492M536 239H568M536 269H568M536 299H568M612 239H644M612 269H644M612 299H644"/></g>
+  <circle cx="400" cy="430" r="26" fill="#fff" stroke="#dd8740" stroke-width="5"/>
+  <path d="M400 412V448M382 430H418" stroke="#dd8740" stroke-width="5"/>
+</svg>
