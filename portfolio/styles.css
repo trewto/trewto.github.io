@@ -158,6 +158,15 @@ main > section { --section-tint: #f0f3f7; --section-accent: var(--primary); }
 
 /* Research prose and workflow follow the same reading order. */
 .research-row { display: flex; flex-direction: column; gap: 20px; }
+.research-appointment + .research-row { border-top: 1px solid var(--line); padding-top: 24px; }
+.research-appointment { margin-bottom: 28px; padding: 20px; border: 1px solid #d7e3f0; border-left: 3px solid #4779a6; border-radius: 6px; background: #f1f6fc; }
+.appointment-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.research-appointment h3 { font-size: var(--text-entry); margin: 0; }
+.research-appointment p { text-align: left; }
+.research-appointment .entry-meta { margin: 0; }
+.research-appointment .appointment-project { margin: 10px 0 16px; font-weight: 600; color: var(--heading); line-height: 1.5; }
+.appointment-facts { display: grid; gap: 6px; margin: 0; padding-top: 12px; border-top: 1px solid #d7e3f0; font-size: .9375rem; line-height: 1.6; }
+.appointment-facts p { margin: 0; }
 .research-row > div > p > strong { display: inline-block; }
 .research-row > div > p:not(.entry-meta) { text-align: left; }
 .research-contributions { margin-top: 20px; }
@@ -577,6 +586,7 @@ body.dialog-open { overflow: hidden; }
 }
 @page { size: auto; margin: 15mm 0; }
 @media print {
+  .research-appointment { break-inside: avoid; background: none; padding: 12px; }
   .thesis-preview { display: block; break-inside: avoid; padding: 12px 0; border: 0; }
   .thesis-preview .video-thumb { display: none; }
   .publication-list > li { display: block; }
